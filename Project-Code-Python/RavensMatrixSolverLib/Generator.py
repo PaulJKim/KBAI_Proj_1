@@ -17,6 +17,17 @@ class Generator:
             possibleAnswer = {}
             possibleAnswer['name'] = startFigure + '_' + key
 
+            # This logic is faulty
+            # The way we want to generate possible answers is in the same structure as the 
+            # models that we're provided here.
+            # Right now though, I'm generating answers at the Object level. We need to bundle
+            # these possibilities up into one structure.
+
+            # Thinking from the bottom up, I think this means that we should generate all the attribute transformations
+            # Collect those into individual objects. Then we can collect those objects and roll them up into a figure.
+            # Then at the Tester level, we can just compare the generated figures to all the possible answers and then
+            # select the answer that was most similar to either/both.
+            
             for objectName, objectModel in figures[startFigure].objects.items():
                 objectRelationships = relationships[key]
 
@@ -29,6 +40,7 @@ class Generator:
                 
     def applyRelationship(self, objectRelationships, objectModel):
         
+
         answerObjectAttributes = {}
 
         for ObjectRelationshipModel in objectRelationships:
