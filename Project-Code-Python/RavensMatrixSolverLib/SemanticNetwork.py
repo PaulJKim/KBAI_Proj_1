@@ -34,6 +34,7 @@ class SemanticNetwork:
 
         return transformationsByObjectMapping
 
+    # These methods could go in a library of some sort
     def calculateObjectSimilarityScore(self, objectModel, potentiallyRelatedObjectModel):
         similarityScore = 0
 
@@ -48,4 +49,3 @@ class SemanticNetwork:
             return 1
         else:
             return 0
-

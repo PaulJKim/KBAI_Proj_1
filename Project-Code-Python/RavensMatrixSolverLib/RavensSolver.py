@@ -21,7 +21,8 @@ class RavensSolver:
             possibleAnswers = generator.generatePossibleAnswers(self.problem.figures, relationships)
 
             tester = Tester()
-            answerChoice = tester.testPossibleAnswers(possibleAnswers, self.problem.figures)
+            answerChoice = tester.testPossibleAnswers(self.problem.figures, possibleAnswers)
 
+            print(answerChoice)
             return answerChoice
         
